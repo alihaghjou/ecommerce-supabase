@@ -13,7 +13,7 @@ export interface product {
 
 export default async function Home() {
   const supabase = createServerComponentClient({ cookies });
-
+  console.log(cookies)
   const { data: products, error } = await supabase.from("product").select().limit(10);
   if (error) throw new Error(error.message)
   return (
