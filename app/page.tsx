@@ -10,7 +10,7 @@ export interface productType {
   price: number;
   image: string;
 }
-
+//TODO: make the database schema for the purchesed data based on amount of sent products and user
 export default async function Home() {
   const supabase = createServerComponentClient({ cookies });
 

@@ -6,7 +6,7 @@ import type { productType } from "../page";
 
 export default function Display({product}: {product: productType}) {
   return (
-    <main className="flex flex-col justify-center gap-6 items-center py-10">
+    <main className="flex flex-col justify-center gap-6 items-center py-10 animate-in">
     <Link className="self-start px-6" href="/">
       Home
     </Link>

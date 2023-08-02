@@ -15,7 +15,7 @@ export default function AddCart({ product }: { product: productType }) {
   }
   return (
     <div>
-      <button onClick={addToCart}>Add to Cart</button>
+      <button onClick={addToCart} className="btn btn-primary">Add to Cart</button>
       {isSuccess && (
         <div className="alert alert-success animate-in fixed bottom-4 w-max left-1/2 -translate-x-1/2">
           <svg

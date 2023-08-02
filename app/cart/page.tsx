@@ -14,6 +14,12 @@ export default function Home() {
     setCart(getCartItems());
   }, []);
 
+  function emptyCart() {
+    localStorage.removeItem("cart")
+    setCart([])
+    router.push("/")
+  }
+
   const sendCart = async () => {
     const { data: {user} } = await supabase.auth.getUser();
     if (!user) {
@@ -21,13 +27,15 @@ export default function Home() {
       return
     };
     console.log(cart);
-    
+    emptyCart()
   };
 
-  if (!cart) return <div>Cart is Empty</div>;
+  if (cart.length === 0) return <div className="text-center">Cart is Empty</div>;
   return (
     <div>
-      {cart.length} <button className="btn btn-outline" onClick={sendCart} disabled={cart.length === 0 ? true : false}>Send cart</button>
+      {cart.length} 
+      <button className="btn btn-success" onClick={sendCart}>Send cart</button>
+      <button className="btn btn-warning" onClick={emptyCart}>Empty Cart</button>
     </div>
   );
 }
