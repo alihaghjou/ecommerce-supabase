@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import MainPageDisplay from "./MainPageDisplay";
 import Header from "./Header";
 
-export interface product {
+export interface productType {
   id: number;
   title: string;
   description: string;

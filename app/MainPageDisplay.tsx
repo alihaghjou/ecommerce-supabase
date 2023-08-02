@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { product } from "./page";
+import type { productType } from "./page";
 
-export default function MainPageDisplay({ products }: { products: product[] }) {
+export default function MainPageDisplay({ products }: { products: productType[] }) {
   return (
     <main className="flex min-h-screen items-center flex-wrap gap-8 justify-center p-24 animate-in">
-      {products?.map((product: product) => (
+      {products?.map((product) => (
         <div key={product.id} className="card w-96 shadow-xl">
           <figure>
             <Image
