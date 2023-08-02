@@ -2,7 +2,7 @@
 
 export default function loading() {
   return (
-    <div className="flex my-10 items-center justify-center">
+    <div className="flex my-10 items-center justify-center bg-slate-50">
       <svg
         aria-hidden="true"
         className="inline w-14 h-14 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"

@@ -2,23 +2,16 @@
 
 import { useState } from "react";
 import type { productType } from "../page";
+import { addItemCart } from "../../lib/getCartLocal";
 
 export default function AddCart({ product }: { product: productType }) {
   const [isSuccess, setIsSuccess] = useState(false);
   function addToCart() {
-    const storage = localStorage.getItem("cart");
-    if (storage) {
-      const prev = JSON.parse(storage);
-      const newData = [...prev, product];
-      localStorage.removeItem("cart");
-      localStorage.setItem("cart", JSON.stringify(newData));
-      setIsSuccess(true)
-      setTimeout(() => {
-        setIsSuccess(false)
-      }, 3000)
-    } else {
-      localStorage.setItem("cart", JSON.stringify([product]));
-    }
+    addItemCart(product);
+    setIsSuccess(true);
+    setTimeout(() => {
+      setIsSuccess(false);
+    }, 3000);
   }
   return (
     <div>
@@ -38,7 +31,7 @@ export default function AddCart({ product }: { product: productType }) {
               d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <span>Your purchase has been confirmed!</span>
+          <span>Your Product Added to Cart!</span>
         </div>
       )}
     </div>

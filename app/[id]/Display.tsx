@@ -21,7 +21,7 @@ export default function Display({product}: {product: productType}) {
       <section className="flex flex-col gap-6 text-xl">
         <h1>
           <span className="font-bold">Title: </span>
-          {product.title}
+          <span className="capitalize">{product.title}</span>
         </h1>
         <h2>
           <span className="font-bold">Price: </span>

@@ -7,11 +7,11 @@ export default function MainPageDisplay({ products }: { products: productType[] 
   return (
     <main className="flex min-h-screen items-center flex-wrap gap-8 justify-center p-24 animate-in">
       {products?.map((product) => (
-        <div key={product.id} className="card w-96 shadow-xl">
+        <div key={product.id} className="card w-96 shadow-xl hover:shadow-2xl">
           <figure>
             <Image
               src={product.image}
-              alt="Shoes"
+              alt={product.title}
               width={256}
               height={256}
               className="w-full h-72"
