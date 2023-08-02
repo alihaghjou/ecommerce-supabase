@@ -1,10 +1,8 @@
 "use client"
 
-import React from 'react'
-
 function error() {
   return (
-    <div>error</div>
+    <div className='text-center'>Page Not Found...</div>
   )
 }
 

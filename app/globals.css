@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-50 min-h-screen
+  @apply bg-slate-50 min-h-screen text-gray-800
 }
 
 .animate-in {
