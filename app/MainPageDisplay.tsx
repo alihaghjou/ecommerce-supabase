@@ -2,29 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { product } from "./page";
-import LogoutButton from "./LogoutButton";
-import { User } from "@supabase/supabase-js";
 
-export default function MainPageDisplay({ products, user }: { products: product[], user: User | null }) {
+export default function MainPageDisplay({ products }: { products: product[] }) {
   return (
-    <main className="flex min-h-screen items-center justify-center p-24 animate-in">
-      <div>
-        {user ? (
-          <div className="flex items-center gap-4">
-            Hey, {user.email}!
-            <LogoutButton />
-          </div>
-        ) : (
-          <Link
-            href="/login"
-            className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-          >
-            Login
-          </Link>
-        )}
-      </div>
+    <main className="flex min-h-screen items-center flex-wrap gap-8 justify-center p-24 animate-in">
       {products?.map((product: product) => (
-        <div key={product.id} className="card w-96 bg-base-100 shadow-xl">
+        <div key={product.id} className="card w-96 h-96 shadow-xl">
           <figure>
             <Image
               src={product.image}
