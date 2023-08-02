@@ -14,7 +14,7 @@ export default function Header({ user }: { user: User | null }) {
   return (
     <header className="p-4 border-b-2 mx-1 flex justify-between items-center">
       <Link href="/cart" className="indicator">
-        <span className="indicator-item badge badge-secondary">
+        <span className="indicator-item badge badge-primary">
           {cartLength}
         </span>
         <button className="text-xl">Cart</button>
