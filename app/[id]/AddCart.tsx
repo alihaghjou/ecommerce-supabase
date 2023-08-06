@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { productType } from "../page";
-import { addItemCart } from "../../lib/getCartLocal";
+import { addItemCart, productType } from "../../lib/getCartLocal";
 
 export default function AddCart({ product }: { product: productType }) {
   const [isSuccess, setIsSuccess] = useState(false);

@@ -1,15 +1,16 @@
 "use client";
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { getCartItems } from "../../lib/getCartLocal";
+import { getCartItems, productType } from "../../lib/getCartLocal";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Database } from "@/supabase";
 
 export default function Home() {
   const router = useRouter()
-  const supabase = createClientComponentClient();
+  const supabase = createClientComponentClient<Database>();
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState<productType[]>([]);
   useEffect(() => {
     setCart(getCartItems());
   }, []);

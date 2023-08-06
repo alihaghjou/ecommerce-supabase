@@ -1,15 +1,12 @@
 "use client"
 import Image from "next/image";
-import Link from "next/link";
 import AddCart from "./AddCart";
-import type { productType } from "../page";
+import { productType } from "@/lib/getCartLocal";
 
 export default function Display({product}: {product: productType}) {
+  if (product === null) return <div></div>
   return (
     <main className="flex flex-col justify-center gap-6 items-center py-10 animate-in">
-    <Link className="self-start px-6" href="/">
-      Home
-    </Link>
     <div className="flex flex-col md:flex-row gap-10">
       <Image
         src={product.image}
@@ -25,7 +22,7 @@ export default function Display({product}: {product: productType}) {
         </h1>
         <h2>
           <span className="font-bold">Price: </span>
-          {product.price}
+          {product.price}$
         </h2>
       </section>
     </div>

@@ -1,5 +1,12 @@
 "use client"
-import { productType } from "../app/page";
+export type productType = {
+  category: "digital" | "book" | "clothe" | "shoe";
+  description: string;
+  id: number;
+  image: string;
+  price: number;
+  title: string;
+}[] | null
 
 export function getCartItems(): productType[] {
   if (typeof window === undefined) return []

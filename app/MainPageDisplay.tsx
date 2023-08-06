@@ -1,9 +1,9 @@
 "use client";
+import { productType } from "@/lib/getCartLocal";
 import Image from "next/image";
 import Link from "next/link";
-import type { productType } from "./page";
 
-export default function MainPageDisplay({ products }: { products: productType[] }) {
+export default function MainPageDisplay({ products }: { products: productType }) {
   return (
     <main className="flex min-h-screen items-center flex-wrap gap-8 justify-center p-24 animate-in">
       {products?.map((product) => (
@@ -23,7 +23,7 @@ export default function MainPageDisplay({ products }: { products: productType[] 
               <span className="font-bold">Description: </span>
               {product.description}
             </p>
-            <p><span className="font-bold">Price:</span>{product.price}</p>
+            <p><span className="font-bold">Price:</span>{product.price}$</p>
             <div className="card-actions justify-end">
               <Link href={`/${product.id}`}>
                 <button className="btn btn-outline btn-info">Buy Now</button>
