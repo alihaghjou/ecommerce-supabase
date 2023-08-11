@@ -14,8 +14,8 @@ export default function MainPageDisplay({
     <main className="flex min-h-screen items-center flex-wrap gap-8 justify-center p-24 animate-in">
       <MainPageSearch />
       <section className="flex items-center flex-wrap gap-8 justify-center">
-        {products.map((product) => (
-          <MainPageProductDisplay key={product.id} product={product} />
+        {products.map((product, i) => (
+          <MainPageProductDisplay key={i} product={product} />
         ))}
       </section>
     </main>
