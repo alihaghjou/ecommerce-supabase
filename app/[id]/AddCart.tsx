@@ -2,15 +2,18 @@
 
 import { useState } from "react";
 import { addItemCart, productType } from "../../lib/getCartLocal";
+import { useRouter } from "next/navigation";
 
 export default function AddCart({ product }: { product: productType }) {
   const [isSuccess, setIsSuccess] = useState(false);
+  const router = useRouter()
   function addToCart() {
     addItemCart(product);
     setIsSuccess(true);
     setTimeout(() => {
       setIsSuccess(false);
     }, 3000);
+    router.refresh()
   }
   return (
     <div>
