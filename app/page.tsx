@@ -3,7 +3,6 @@ import { cookies } from "next/headers";
 import MainPageDisplay from "./MainPageDisplay";
 import { Database } from "@/supabase";
 
-//TODO: make the database schema for the purchesed data based on amount of sent products and user
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies });
 
