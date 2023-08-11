@@ -18,11 +18,12 @@ export default async function Index({
     .from("product")
     .select()
     .ilike("title", `%${modified}%`);
+    if (error) throw new Error(error.message)
   return (
-    <main className="flex flex-col gap-6 py-3">
+    <main className="flex flex-col gap-6 py-3 animate-in">
       <h1 className="text-center text-xl">Search Result</h1>
       <section className="flex flex-wrap items-center justify-center gap-6">
-        {searchProducts?.map((product) => (
+        {searchProducts.length ? searchProducts.map((product) => (
           <div
             key={product.id}
             className="card w-96 shadow-xl hover:shadow-2xl"
@@ -53,7 +54,7 @@ export default async function Index({
               </div>
             </div>
           </div>
-        ))}
+        )) : (<div>No Product Found</div>)}
       </section>
     </main>
   );
