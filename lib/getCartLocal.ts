@@ -6,7 +6,7 @@ export type productType = {
   image: string;
   price: number;
   title: string;
-}[] | null
+} | null
 
 export function getCartItems(): productType[] {
   if (typeof window === undefined) return []
